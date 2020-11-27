@@ -1,0 +1,8 @@
+
+ .input-group{
+
+    height: 80;
+   }
+   .input-group textarea{
+     min-height: 80px;
+   }
