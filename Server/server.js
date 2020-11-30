@@ -14,8 +14,7 @@ app.use(express.static(path.join(ClientPath,'/public')));
 app.get('/',(req,res)=>{
    
     res.sendFile(path.join(ClientPath,'/index.html'));
-    const title = dbcon('select title from Mydocument');
-    const contents = dbcon('select contents from Mydocument');
+    const title = dbcon('select * from Mydocument');
 })
 
 
