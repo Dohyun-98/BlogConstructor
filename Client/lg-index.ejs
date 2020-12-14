@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/custom.css" defer>
 </head>
-
 <body>
   <!-- -----------------메뉴바---------------------------------------- -->
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top ">
@@ -42,36 +41,26 @@
             <a class="dropdown-item" href="member/myinfo">회원정보 수정</a>
           </div>
         </li>
-        
       </ul>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Login
+          <%= user %>님
         </button>
         <div class="dropdown-menu">
-          <form class="px-4 py-3" action="/auth/login" method="POST">
-            <div class="form-group">
-              <label for="exampleDropdownFormEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com" name="useremail" value="">
-            </div>
-            <div class="form-group">
-              <label for="exampleDropdownFormPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password" name="password" value="">
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                <label class="form-check-label" for="dropdownCheck">
-                  Remember me
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary" value="submit">Sign in</button>
+          <form class="px-4 py-3" action="/logout" method="Get">
+            <div><%= user %> 님 환영합니다.</div>
+            <% if(pri=='admin'){ %> 
+            <div>권한 : 관리자</div>
+            <% }else { %> 
+              <div>권한 : 일반</div>
+            <% } %> 
+            <button class="btn btn-secondary " type="submit" >
+              Logout
+             </button>
           </form>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="member/sign-up-info">New around here? Sign up</a>
-          <a class="dropdown-item" href="#">Forgot password?</a>
+          <a class="dropdown-item" href="member/myinfo">Change Myinfomation</a>
         </div>
       </div>
 
