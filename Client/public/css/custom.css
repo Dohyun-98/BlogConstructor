@@ -41,3 +41,7 @@ aside{
  aside a:visited { color: black; text-decoration: none;}
  aside a:hover { color: black; text-decoration: underline;}
 
+#writenotice{
+  height: 100%;
+  min-height: 400px;
+}
